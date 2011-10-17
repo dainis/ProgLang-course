@@ -100,7 +100,7 @@ namespace ConsoleApplication1
         /**
          * Realizācija izmantojot ArrayList
          */
-        private static int FunkcijaA(int n) 
+        private static void FunkcijaA(int n) 
         {
 
             Console.WriteLine("FunkcijaA");
@@ -144,15 +144,16 @@ namespace ConsoleApplication1
                 sum += prime;
             }
 
-            
-            return sum;
+            Console.WriteLine("Pirmskaitlis : " + last_prime);
+            Console.WriteLine("Summa : " + sum);
+            Console.WriteLine();
         }
 
         /**
          * Realizācija izmantojot NumberContainer, kas ir saistītais saraksts. Realizācija ir tādi pati kā FunkcijaA gadījumā, jo NumberContainer implementē Enumerable interfeisu, 
          * kas ļauj izmantot foreach ciklu, lai pārskaitītu visas NumberContainer vērtības
          */
-        private static int FunkcijaB(int n)
+        private static void FunkcijaB(int n)
         {
             Console.WriteLine("FunkcijaB");
 
@@ -195,7 +196,9 @@ namespace ConsoleApplication1
                 sum += prime;
             }
 
-            return sum;
+            Console.WriteLine("Pirmskaitlis : " + last_prime);
+            Console.WriteLine("Summa : " + sum);
+            Console.WriteLine();
         }
 
         static void Main(string[] args)
@@ -208,8 +211,8 @@ namespace ConsoleApplication1
 
             int n = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine(FunkcijaA(n));
-            Console.WriteLine(FunkcijaB(n));
+            FunkcijaA(n);
+            FunkcijaB(n);
 
             Console.ReadKey();
         }
