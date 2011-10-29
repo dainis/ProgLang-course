@@ -1,0 +1,4 @@
+module md3_1 where
+
+find x [] = ""
+find x (bh:bt) = let x if bh then snd(bh) else find x bt
