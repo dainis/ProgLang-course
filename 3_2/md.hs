@@ -11,7 +11,8 @@ data Tree a = Leaf a | Vertex1 (Tree a) | Vertex2 (Tree a) (Tree a) deriving (Sh
 --get_end :: (Ord a, Num a) => a
 get_end [] _ = 0 
 get_end (lh:[]) _ = fromIntegral(lh) 
-get_end (lh:lt) d = if  compare (fromIntegral(lh)) (get_end lt d) == d then fromIntegral(lh) else get_end lt d 
+get_end (lh:lt) d = if  compare (fromIntegral(lh)) next_smallest == d then fromIntegral(lh) else next_smallest
+	where next_smallest = get_end lt d
 
 --Atbilstoði katram iespçjamajam koka virsotnes tipam izpilda atbilstoðu funckiju, ja paðreizçjâ virsotne nav lapa tad tiek iets tâlâk dziïumâ aa :: Integral a => Tree [a] -> [[Int]]
 aa (Leaf a) = [[length a, get_end a LT , get_end a GT]]
