@@ -1,3 +1,6 @@
+--Dainis Tillers
+--dt08050
+--MD3_1
 module Md where
 
 --Atrod tulkojumu
@@ -17,7 +20,7 @@ unique [] = [];
 unique (h:t) = if not(exists h t) then h:unique t else unique t
 
 --Veic tulkosanu un atgriez elementus bez atkatosanas
-perform_translation a b = unique (translate a b)
+ff a b = unique (translate a b)
 
-test1 = perform_translation [("a", "b"), ("b", "b"), ("c", "b"), ("d", "b"), ("e", "b")] [("b","a"), ("b","b"), ("b", "c"), ("b", "d"), ("b", "e")]
-test2 = perform_translation [("a", "a"), ("b", "b"), ("c", "c"), ("d", "d")] [("a", "a"), ("b", "b"), ("c", "c"), ("d", "d"), ("a", "b"), ("b", "c"), ("c", "d"), ("d", "a")]
+test1 = ff [("a", "b"), ("b", "b"), ("c", "b"), ("d", "b"), ("e", "b")] [("b","a"), ("b","b"), ("b", "c"), ("b", "d"), ("b", "e")]
+test2 = ff [("a", "a"), ("b", "b"), ("c", "c"), ("d", "d")] [("a", "a"), ("b", "b"), ("c", "c"), ("d", "d"), ("a", "b"), ("b", "c"), ("c", "d"), ("d", "a")]
